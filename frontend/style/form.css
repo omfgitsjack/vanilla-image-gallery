@@ -1,0 +1,54 @@
+.form_element {
+    font-size: 1rem;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #d4d4d4;
+}
+
+.form_element.borderless {
+    border-color: transparent;
+}
+
+/* Button-related styling */
+ 
+.btn {
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    opacity: .75;
+}
+
+.btn.btn-overlayed {
+    padding: 10px;
+}
+
+.btn.submit {
+    height: 50px;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #444444;
+    color: white;
+    border: none;
+}
+
+.btn.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.btn.disabled:hover {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.btn.btn-image {
+    height: 35px;
+    width: 35px;
+    background-size: cover;
+}
+
+#gallery-area .comments-wrapper textarea {
+    margin-top: -1px;
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Picturely</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+    <link href="style/form.css" rel="stylesheet" type="text/css" />
+    <link href="style/auth-area.css" rel="stylesheet" type="text/css" />
+    <link href="style/gallery-picker-area.css" rel="stylesheet" type="text/css" />
+    <link href="style/upload-area.css" rel="stylesheet" type="text/css" />
+    <link href="style/index.css" rel="stylesheet" type="text/css" />
+    <link href="style/image_viewer.css" rel="stylesheet" type="text/css" />
+    <link href="style/comments.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <!--Upload Form-->
+    <div id="upload-area">
+
+        <!--Area that takes up the whole screen, dedicated for viewing the image-->
+        <section class="image-viewer-area">
+
+            <div class="image-container"></div>
+
+            <div class="top-left-nav">
+                <div class="btn btn-image logout"></div>
+                <div class="btn btn-image discover"></div>
+            </div>
+
+            <div class="image-controls">
+                <div id="hide-upload-button" class="btn btn-image"></div>
+                <div id="upload-image-button" class="btn btn-image"></div>
+            </div>
+
+            <div class="upload-form">
+                <h2>Upload your image</h2>
+                <input type="text" name="name" class="form_element" placeholder="Image name">
+                <div class="radio-group">
+                    <input type="radio" name="image-type" value="URL"><span>URL Upload</span>
+                    <input type="radio" name="image-type" value="FileUpload"><span>Image Upload</span>
+                </div>
+                <div class="image-file-upload">
+                    <input type="file" accept="image/*" name="file" id="file-input" />
+                    <label for="file-input"><strong>Choose a file</strong></label>
+                </div>
+                <!--<input type="file" id="image-upload">-->
+                <div class="image-url-upload">
+                    <input type="text" name="url" class="form_element" placeholder="Upload by Url">
+                    <button class="btn submit">Preview</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!--Gallery & Comments Area-->
+    <div id="gallery-area">
+
+        <!--Area that takes up the whole screen, dedicated for viewing the image-->
+        <section class="image-viewer-area">
+
+            <div class="image-container">
+                <img src="http://4kwallpapershd.com/wp-content/uploads/2016/07/Apple-Os-X-El-Capitan-Desktop-Themes.jpg" alt="default_image">
+            </div>
+
+            <div class="image-title-area">
+                <h2 class="hidden">image area</h2>
+                <!-- just so w3c won't complain... -->
+                <div>
+                    <div class="image-title-area--image-name"></div>
+                </div>
+                <div>
+                    <div class="image-title-area--image-author"></div>
+                </div>
+            </div>
+
+            <div class="top-left-nav">
+                <div class="btn btn-image logout"></div>
+                <div class="btn btn-image discover"></div>
+            </div>
+
+            <div class="image-controls">
+                <div id="delete-image-button" class="btn btn-image"></div>
+                <div id="show-upload-button" class="btn btn-image"></div>
+            </div>
+
+            <div class="gallery-controls">
+                <div>
+                    <div class="btn btn-image" id="gallery-controls--previous"></div>
+                </div>
+                <div>
+                    <div class="btn btn-image" id="gallery-controls--next"></div>
+                </div>
+            </div>
+
+            <div class="image-footer-area">
+                <p>comments</p>
+            </div>
+        </section>
+
+        <!--Comments Area-->
+        <section class="comments-area">
+            <div class="comments-wrapper">
+
+                <!--Insert comment/response here-->
+                <form class="comments-form">
+                    <h3>Write a Response</h3>
+                    <textarea class="form_element" placeholder="Write a Response" rows="5"></textarea>
+                    <input type="submit" class="btn submit" value="Submit Response" />
+                </form>
+
+                <!--Area that shows responses (10 max)-->
+                <div class="comments">
+                    <h3>Responses</h3>
+                    <div id="response-container"></div>
+
+                    <!--Pagination controller-->
+                    <div id="pagination-container">
+                        <div class="btn btn-image" id="pagination-controls--prev"></div>
+                        <div class="btn btn-image" id="pagination-controls--next"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="gallery-picker-area">
+
+        <div class="top-left-nav">
+            <div class="btn btn-image logout"></div>
+            <div class="btn btn-image discover"></div>
+        </div>
+
+        <section>
+            <h1>Select a Gallery</h1>
+            <div class="gallery-list-container"></div>
+            <button class="btn submit">Load More</button>
+        </section>
+    </div>
+
+    <!-- Sign up area -->
+    <div id="auth-area" class="active">
+        <section>
+            <div class="auth-form">
+                <h1>Welcome to Picturely.</h1>
+                <div class="error-msg"></div>
+                <input type="text" name="username" class="form_element" placeholder="Username" />
+                <input type="password" name="password" class="form_element" placeholder="Password" />
+                <div class="auth-form--submission-area">
+                    <input id="sign-in-btn" type="submit" class="btn submit" value="Sign in" />
+                    <input id="sign-up-btn" type="submit" class="btn submit" value="Sign up" />
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/event_types.js"></script>
+    <script src="js/store.js"></script>
+    <!-- Helper that stores our in-app state -->
+
+    <!-- Views -->
+    <script src="js/view/auth_view.js"></script>
+    <script src="js/view/gallery_picker_view.js"></script>
+    <script src="js/view/gallery_view.js"></script>
+    <script src="js/view/comment_view.js"></script>
+    <script src="js/view/upload_view.js"></script>
+    <script src="js/view.js"></script>
+
+    <!-- Models -->
+    <script src="js/data_models/ImageModel.js"></script>
+    <script src="js/data_models/MessageModel.js"></script>
+
+    <!-- Data Fetching Services -->
+    <script src="js/services/GalleryService.js"></script>
+    <script src="js/services/AuthService.js"></script>
+    <script src="js/services/ImageService.js"></script>
+    <script src="js/services/MessageService.js"></script>
+
+    <!-- CLient logic -->
+    <script src="js/model.js"></script>
+
+    <script src="js/controller.js"></script>
+</body>
+
+</html>

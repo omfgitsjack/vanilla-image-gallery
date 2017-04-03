@@ -1,0 +1,59 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    margin: 0;
+    height: 100%;
+}
+
+/*Typography Settings*/
+body, p, h1,h2,h3,h4,h5, button, input {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.muted {
+    color: #9a9a9a;
+}
+
+#upload-area {
+    display: none;
+}
+
+#gallery-area {
+    display: none;
+}
+
+#gallery-picker-area {
+    display: none;
+}
+
+#auth-area {
+    display: none;
+}
+
+#upload-area.active,
+#gallery-area.active,
+#auth-area.active,
+#gallery-picker-area.active {
+    display: flex;
+    flex-direction: column;
+    /*height: 100vh;*/
+} 
+
+#upload-form-toggler {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.image-container > img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.hidden {
+    display: none !important;
+}

@@ -1,0 +1,49 @@
+
+#auth-area section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    background-image: url('http://4kwallpapershd.com/wp-content/uploads/2016/07/Apple-Os-X-El-Capitan-Desktop-Themes.jpg');
+    background-size: cover;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 400px;
+    width: 100%;
+}
+
+.auth-form > * {
+    margin: 5px 0;
+    width: 100%;
+}
+
+.auth-form h1 {
+    font-size: 37px;
+    color: white;
+}
+
+.auth-form > input {
+    max-width: 370px;
+    border-radius: 0;
+}
+
+.auth-form--submission-area {
+    display: flex;
+}
+
+.auth-form--submission-area > input:first-child {
+    flex: 1 1 0%;
+    margin-right: 5px;
+}
+
+.auth-form--submission-area > input:last-child {
+    flex: 1 1 0%;
+    margin-left: 5px;
+}
